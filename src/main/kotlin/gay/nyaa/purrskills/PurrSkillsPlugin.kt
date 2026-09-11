@@ -106,6 +106,10 @@ class PurrSkillsPlugin : JavaPlugin() {
         val skillsCommand = SkillsCommand(skillManager, i18n)
         getCommand("skills")?.setExecutor(skillsCommand)
         getCommand("skills")?.tabCompleter = skillsCommand
+
+        val statsCommand = gay.nyaa.purrskills.command.StatsCommand(skillManager, statsManager, i18n)
+        getCommand("stats")?.setExecutor(statsCommand)
+        getCommand("stats")?.tabCompleter = statsCommand
     }
 
     /**
