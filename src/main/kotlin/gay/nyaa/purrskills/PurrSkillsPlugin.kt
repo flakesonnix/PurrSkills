@@ -3,6 +3,7 @@ package gay.nyaa.purrskills
 import com.purrcore.PurrCorePlugin
 import com.purrcore.db.Database
 import com.purrcore.i18n.I18n
+import gay.nyaa.purrskills.skill.combat.CombatListener
 import gay.nyaa.purrskills.skill.farming.FarmingListener
 import gay.nyaa.purrskills.skill.foraging.ForagingListener
 import gay.nyaa.purrskills.skill.mining.MiningListener
@@ -62,6 +63,7 @@ class PurrSkillsPlugin : JavaPlugin() {
         server.pluginManager.registerEvents(MiningListener(this), this)
         server.pluginManager.registerEvents(FarmingListener(this), this)
         server.pluginManager.registerEvents(ForagingListener(this), this)
+        server.pluginManager.registerEvents(CombatListener(this), this)
     }
 
     /**
