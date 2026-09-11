@@ -1,5 +1,6 @@
 package gay.nyaa.purrskills
 
+import gay.nyaa.purrskills.db.SkillRepository
 import gay.nyaa.purrskills.skill.PlayerSkills
 import gay.nyaa.purrskills.skill.Skill
 import gay.nyaa.purrskills.skill.SkillProgression
@@ -9,28 +10,101 @@ import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.entity.Player
 
 /**
- * Manages player skills, XP awarding, and notifications.
+ * Manages player skills, XP awarding, notifications, and persistence.
  * Encapsulates skill-related business logic separately from plugin infrastructure.
  */
 class SkillManager(
     private val config: FileConfiguration,
     private val i18n: com.purrcore.i18n.I18n,
+    private val repository: SkillRepository,
 ) {
 
     // In-memory cache of player skills
-    // TODO: Load from database on join, save to database periodically
+    // Loaded from database on join, saved periodically and on quit
     private val playerSkillsCache = ConcurrentHashMap<UUID, PlayerSkills>()
 
     /**
-     * Get or create PlayerSkills for a player.
-     * Currently in-memory only - no database persistence yet.
+     * Load player skills from database and cache them.
+     * Called when player joins the server.
+     *
+     * @param uuid Player UUID
+     * @return Loaded PlayerSkills (or defaults if new player)
+     */
+    fun loadPlayer(uuid: UUID): PlayerSkills = try {
+        val skills = repository.loadPlayerSkills(uuid)
+        playerSkillsCache[uuid] = skills
+        skills
+    } catch (e: Exception) {
+        // On error, use default skills to prevent progression loss
+        // Error already logged by repository
+        val defaultSkills = PlayerSkills.create(uuid)
+        playerSkillsCache[uuid] = defaultSkills
+        defaultSkills
+    }
+
+    /**
+     * Save player skills to database.
+     * Called when player quits or during periodic save.
+     *
+     * @param uuid Player UUID
+     * @return true if saved successfully, false on error
+     */
+    fun savePlayer(uuid: UUID): Boolean {
+        val skills = playerSkillsCache[uuid] ?: return false
+
+        return try {
+            repository.savePlayerSkills(skills)
+            true
+        } catch (e: Exception) {
+            // Error already logged by repository
+            false
+        }
+    }
+
+    /**
+     * Remove player from cache after saving.
+     * Called when player quits.
+     *
+     * @param uuid Player UUID
+     */
+    fun removePlayer(uuid: UUID) {
+        savePlayer(uuid)
+        playerSkillsCache.remove(uuid)
+    }
+
+    /**
+     * Save all cached player skills to database.
+     * Called on periodic save and plugin disable.
+     *
+     * @return Number of players successfully saved
+     */
+    fun saveAll(): Int {
+        if (playerSkillsCache.isEmpty()) return 0
+
+        return try {
+            // Create snapshot to avoid concurrent modification
+            val snapshot = HashMap(playerSkillsCache)
+            repository.saveAll(snapshot)
+        } catch (e: Exception) {
+            // Error already logged by repository
+            0
+        }
+    }
+
+    /**
+     * Get PlayerSkills for a player.
+     * Returns cached skills if available, otherwise loads from database.
+     *
+     * For online players, skills should already be loaded.
+     * For offline players, this loads fresh from database.
      */
     fun getPlayerSkills(player: Player): PlayerSkills = getPlayerSkills(player.uniqueId)
 
     /**
-     * Get or create PlayerSkills by UUID.
+     * Get PlayerSkills by UUID.
+     * Returns cached skills if available, otherwise loads from database.
      */
-    fun getPlayerSkills(uuid: UUID): PlayerSkills = playerSkillsCache.computeIfAbsent(uuid) { PlayerSkills.create(uuid) }
+    fun getPlayerSkills(uuid: UUID): PlayerSkills = playerSkillsCache[uuid] ?: loadPlayer(uuid)
 
     /**
      * Award XP to a player for a specific skill.
@@ -97,9 +171,15 @@ class SkillManager(
 
     /**
      * Clear the player skills cache.
-     * Called on plugin disable.
+     * Should only be called after saveAll() on plugin disable.
      */
     fun clearCache() {
         playerSkillsCache.clear()
     }
+
+    /**
+     * Get the number of players currently cached.
+     * Useful for monitoring and debugging.
+     */
+    fun getCachedPlayerCount(): Int = playerSkillsCache.size
 }
