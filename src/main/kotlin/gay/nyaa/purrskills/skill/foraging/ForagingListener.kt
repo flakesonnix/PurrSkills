@@ -38,6 +38,6 @@ class ForagingListener(private val plugin: PurrSkillsPlugin) : Listener {
         if (xp <= 0) return
 
         // Award XP to player
-        plugin.awardSkillXp(player, Skill.FORAGING, xp)
+        plugin.skillManager.awardSkillXp(player, Skill.FORAGING, xp)
     }
 }

@@ -30,6 +30,6 @@ class MiningListener(private val plugin: PurrSkillsPlugin) : Listener {
         if (xp <= 0) return
 
         // Award XP to player
-        plugin.awardSkillXp(player, Skill.MINING, xp)
+        plugin.skillManager.awardSkillXp(player, Skill.MINING, xp)
     }
 }

@@ -43,6 +43,6 @@ class FarmingListener(private val plugin: PurrSkillsPlugin) : Listener {
         if (xp <= 0) return
 
         // Award XP to player
-        plugin.awardSkillXp(player, Skill.FARMING, xp)
+        plugin.skillManager.awardSkillXp(player, Skill.FARMING, xp)
     }
 }
