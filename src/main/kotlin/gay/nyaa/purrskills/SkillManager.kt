@@ -4,19 +4,22 @@ import gay.nyaa.purrskills.db.SkillRepository
 import gay.nyaa.purrskills.skill.PlayerSkills
 import gay.nyaa.purrskills.skill.Skill
 import gay.nyaa.purrskills.skill.SkillProgression
+import gay.nyaa.purrskills.stats.SkillRewardCalculator
+import gay.nyaa.purrskills.stats.StatsManager
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.entity.Player
 
 /**
- * Manages player skills, XP awarding, notifications, and persistence.
+ * Manages player skills, XP awarding, notifications, persistence, and stat rewards.
  * Encapsulates skill-related business logic separately from plugin infrastructure.
  */
 class SkillManager(
     private val config: FileConfiguration,
     private val i18n: com.purrcore.i18n.I18n,
     private val repository: SkillRepository,
+    private val statsManager: StatsManager,
 ) {
 
     // In-memory cache of player skills
@@ -63,6 +66,8 @@ class SkillManager(
 
     /**
      * Remove player from cache after saving.
+     * Also removes skill rewards from stats manager.
+     *
      * Called when player quits.
      *
      * @param uuid Player UUID
@@ -70,6 +75,7 @@ class SkillManager(
     fun removePlayer(uuid: UUID) {
         savePlayer(uuid)
         playerSkillsCache.remove(uuid)
+        statsManager.clearModifiers(uuid)
     }
 
     /**
@@ -132,6 +138,11 @@ class SkillManager(
         val afterLevel = after.getSkill(skill).level
         val leveledUp = afterLevel > beforeLevel
 
+        // If leveled up, refresh skill rewards
+        if (leveledUp) {
+            refreshSkillRewards(uuid, skill)
+        }
+
         // Show actionbar XP gain (if enabled)
         if (config.getBoolean("skills.show-xp-actionbar", true)) {
             val skillProfile = after.getSkill(skill)
@@ -166,6 +177,52 @@ class SkillManager(
                 }
                 player.playSound(player.location, sound, 1.0f, 1.0f)
             }
+        }
+    }
+
+    /**
+     * Refresh skill rewards for a specific skill.
+     * Removes old modifiers and applies new ones based on current level.
+     *
+     * This is idempotent: calling it multiple times with the same level
+     * produces the same result.
+     *
+     * @param uuid Player UUID
+     * @param skill The skill to refresh
+     */
+    fun refreshSkillRewards(uuid: UUID, skill: Skill) {
+        val playerSkills = playerSkillsCache[uuid] ?: return
+        val skillProfile = playerSkills.getSkill(skill)
+        val level = skillProfile.level
+
+        // Get the stat source for this skill
+        val source = when (skill) {
+            Skill.MINING -> gay.nyaa.purrskills.stats.StatSource.SKILL_MINING
+            Skill.FARMING -> gay.nyaa.purrskills.stats.StatSource.SKILL_FARMING
+            Skill.FORAGING -> gay.nyaa.purrskills.stats.StatSource.SKILL_FORAGING
+            Skill.COMBAT -> gay.nyaa.purrskills.stats.StatSource.SKILL_COMBAT
+            Skill.FISHING -> gay.nyaa.purrskills.stats.StatSource.SKILL_FISHING
+        }
+
+        // Remove old modifiers from this skill source
+        statsManager.removeModifiersFromSource(uuid, source)
+
+        // Calculate new modifiers for current level
+        val newModifiers = SkillRewardCalculator.calculateRewards(skill, level)
+
+        // Apply new modifiers
+        statsManager.addModifiers(uuid, newModifiers)
+    }
+
+    /**
+     * Refresh all skill rewards for a player.
+     * Called on player join to sync stats with current skill levels.
+     *
+     * @param uuid Player UUID
+     */
+    fun refreshAllSkillRewards(uuid: UUID) {
+        for (skill in Skill.entries) {
+            refreshSkillRewards(uuid, skill)
         }
     }
 
