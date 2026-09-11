@@ -16,7 +16,7 @@ skills:
   level-up: "&6&lLEVEL UP! &e{skill} &7→ &aLevel {level}"
   level-up-subtitle: "&7Keep grinding to unlock more bonuses!"
   
-  # Command messages
+  # Command messages (legacy)
   skills-header: "&d&lYour Skills"
   skills-line: "&e{skill}: &7Level {level} &8({current}/{required} XP)"
   skills-other-header: "&d&l{player}'s Skills"
@@ -24,3 +24,13 @@ skills:
   # Errors
   player-not-found: "&cPlayer not found!"
   no-permission: "&cYou don't have permission to do that!"
+
+commands:
+  skills:
+    usage: "&cUsage: /skills [player]"
+    player-only: "&cThis command can only be used by players."
+    no-permission-others: "&cYou don't have permission to view other players' skills."
+    player-not-found: "&cPlayer '{player}' not found."
+    header: "&e&l{player}'s Skills"
+    skill-line: "&7  {skill} &fLv {level} &7{xp} / {required} XP &8({percent}%)"
+    power-level: "&6&lPower Level: &e{level}"
