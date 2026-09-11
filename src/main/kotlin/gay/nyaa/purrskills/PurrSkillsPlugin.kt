@@ -101,6 +101,24 @@ class PurrSkillsPlugin : JavaPlugin() {
         server.pluginManager.registerEvents(CombatListener(this), this)
         server.pluginManager.registerEvents(FishingListener(this), this)
 
+        // Speed effect listeners
+        server.pluginManager.registerEvents(
+            gay.nyaa.purrskills.listener.MiningSpeedListener(this),
+            this,
+        )
+        server.pluginManager.registerEvents(
+            gay.nyaa.purrskills.listener.FarmingSpeedListener(this),
+            this,
+        )
+        server.pluginManager.registerEvents(
+            gay.nyaa.purrskills.listener.ForagingSpeedListener(this),
+            this,
+        )
+        server.pluginManager.registerEvents(
+            gay.nyaa.purrskills.listener.FishingSpeedListener(this),
+            this,
+        )
+
         // GUI click listener
         server.pluginManager.registerEvents(SkillMenuListener(i18n), this)
     }

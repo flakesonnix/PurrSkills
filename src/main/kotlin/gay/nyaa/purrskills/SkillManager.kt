@@ -239,4 +239,22 @@ class SkillManager(
      * Useful for monitoring and debugging.
      */
     fun getCachedPlayerCount(): Int = playerSkillsCache.size
+
+    /**
+     * Calculate final stats for a player from all sources.
+     * Convenience method that delegates to StatsManager.
+     *
+     * @param uuid Player UUID
+     * @return PlayerStats with calculated values
+     */
+    fun calculateStats(uuid: UUID) = statsManager.calculateStats(uuid)
+
+    /**
+     * Get calculated stats for a player.
+     * Alias for calculateStats for backward compatibility.
+     *
+     * @param uuid Player UUID
+     * @return PlayerStats with calculated values
+     */
+    fun getPlayerStats(uuid: UUID) = statsManager.calculateStats(uuid)
 }
