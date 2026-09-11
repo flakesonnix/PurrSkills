@@ -5,6 +5,7 @@ import com.purrcore.db.Database
 import com.purrcore.i18n.I18n
 import gay.nyaa.purrskills.skill.combat.CombatListener
 import gay.nyaa.purrskills.skill.farming.FarmingListener
+import gay.nyaa.purrskills.skill.fishing.FishingListener
 import gay.nyaa.purrskills.skill.foraging.ForagingListener
 import gay.nyaa.purrskills.skill.mining.MiningListener
 import org.bukkit.plugin.java.JavaPlugin
@@ -64,6 +65,7 @@ class PurrSkillsPlugin : JavaPlugin() {
         server.pluginManager.registerEvents(FarmingListener(this), this)
         server.pluginManager.registerEvents(ForagingListener(this), this)
         server.pluginManager.registerEvents(CombatListener(this), this)
+        server.pluginManager.registerEvents(FishingListener(this), this)
     }
 
     /**
