@@ -23,18 +23,12 @@ dependencies {
     // Paper 1.26.2 target — defaults to 1.21.10 until 1.26.2 hits repo.papermc.io (API compat same)
     compileOnly("io.papermc.paper:paper-api:$paperVersion")
 
+    // PurrCore — provides shared Database (HikariCP) + I18n
+    compileOnly(files("../PurrCore/build/libs/purrcore-1.0.0.jar"))
+
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-
-    // --- DB ---
-    implementation("com.zaxxer:HikariCP:6.2.1")
-    implementation("org.xerial:sqlite-jdbc:3.47.1.0")
-    // mysql + postgres drivers — remove what you don't need to slim jar
-    implementation("com.mysql:mysql-connector-j:9.2.0")
-    implementation("org.postgresql:postgresql:42.7.5")
-    // slf4j needed by HikariCP (Paper provides it but include for shade)
-    implementation("org.slf4j:slf4j-api:2.0.16")
 
     // Tests — JUnit5 + MockK (Kotlin native where possible, JVM for Paper API mocks)
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
