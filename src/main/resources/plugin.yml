@@ -14,6 +14,11 @@ commands:
     usage: /skills [player]
     permission: purrskills.skills
     permission-message: You don't have permission!
+  stats:
+    description: View your stats from skills
+    usage: /stats [player]
+    permission: purrskills.stats
+    permission-message: You don't have permission!
 
 permissions:
   purrskills.skills:
@@ -21,6 +26,12 @@ permissions:
     default: true
   purrskills.skills.others:
     description: View other players' skills
+    default: op
+  purrskills.stats:
+    description: View your own stats
+    default: true
+  purrskills.stats.others:
+    description: View other players' stats
     default: op
   purrskills.leaderboard:
     description: View skill leaderboards
