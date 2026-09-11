@@ -1,0 +1,25 @@
+# PurrSkills — skill-specific configuration
+# Database config is in PurrCore (plugins/PurrCore/config.yml)
+
+skills:
+  # Which skills are enabled?
+  enabled-skills:
+    - mining
+    - foraging
+    - farming
+    - combat
+    - fishing
+  
+  # Show actionbar XP gains?
+  show-xp-actionbar: true
+  
+  # Show level-up title?
+  show-levelup-title: true
+  
+  # Play level-up sound?
+  levelup-sound: true
+  levelup-sound-type: ENTITY_PLAYER_LEVELUP
+  
+# Messages use PurrCore I18n system
+# See lang/en.yml for message templates
+language: en

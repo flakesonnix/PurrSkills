@@ -1,0 +1,27 @@
+name: PurrSkills
+version: '1.0.0'
+main: gay.nyaa.purrskills.PurrSkillsPlugin
+api-version: '1.21'
+depend: [PurrCore]
+prefix: PurrSkills
+author: flakesonnix
+description: MCMMO-style skills system with XP, levels, and passive bonuses
+website: https://github.com/flakesonnix/PurrSkills
+
+commands:
+  skills:
+    description: View your skill levels
+    usage: /skills [player]
+    permission: purrskills.skills
+    permission-message: You don't have permission!
+
+permissions:
+  purrskills.skills:
+    description: View your own skills
+    default: true
+  purrskills.skills.others:
+    description: View other players' skills
+    default: op
+  purrskills.leaderboard:
+    description: View skill leaderboards
+    default: true
