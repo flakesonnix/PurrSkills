@@ -20,6 +20,13 @@ skills:
   levelup-sound: true
   levelup-sound-type: ENTITY_PLAYER_LEVELUP
   
+  # Autosave interval in minutes
+  # Player skills are saved to database:
+  # - When player quits
+  # - Periodically (this interval)
+  # - On server shutdown
+  autosave-interval-minutes: 5
+  
 # Messages use PurrCore I18n system
 # See lang/en.yml for message templates
 language: en

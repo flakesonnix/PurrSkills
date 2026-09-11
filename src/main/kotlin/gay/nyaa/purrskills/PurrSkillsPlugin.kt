@@ -3,12 +3,15 @@ package gay.nyaa.purrskills
 import com.purrcore.PurrCorePlugin
 import com.purrcore.db.Database
 import com.purrcore.i18n.I18n
+import gay.nyaa.purrskills.db.SkillRepository
+import gay.nyaa.purrskills.listener.PlayerLifecycleListener
 import gay.nyaa.purrskills.skill.combat.CombatListener
 import gay.nyaa.purrskills.skill.farming.FarmingListener
 import gay.nyaa.purrskills.skill.fishing.FishingListener
 import gay.nyaa.purrskills.skill.foraging.ForagingListener
 import gay.nyaa.purrskills.skill.mining.MiningListener
 import org.bukkit.plugin.java.JavaPlugin
+import org.bukkit.scheduler.BukkitTask
 
 /**
  * PurrSkills - MCMMO-style skills system.
@@ -19,9 +22,12 @@ class PurrSkillsPlugin : JavaPlugin() {
     private lateinit var core: PurrCorePlugin
     private lateinit var database: Database
     private lateinit var i18n: I18n
+    private lateinit var repository: SkillRepository
 
     lateinit var skillManager: SkillManager
         private set
+
+    private var periodicSaveTask: BukkitTask? = null
 
     override fun onEnable() {
         // Get PurrCore instance
@@ -32,9 +38,6 @@ class PurrSkillsPlugin : JavaPlugin() {
         // Save default config
         saveDefaultConfig()
 
-        // Initialize skill manager
-        skillManager = SkillManager(config, i18n)
-
         // Initialize database tables
         try {
             migrateDatabase()
@@ -43,15 +46,30 @@ class PurrSkillsPlugin : JavaPlugin() {
             e.printStackTrace()
         }
 
+        // Initialize repository
+        repository = SkillRepository(database, logger)
+
+        // Initialize skill manager
+        skillManager = SkillManager(config, i18n, repository)
+
         // Register listeners
         registerListeners()
+
+        // Start periodic save task
+        startPeriodicSave()
 
         logger.info("PurrSkills enabled - using PurrCore (DB=${database.isConnected()})")
     }
 
     override fun onDisable() {
-        // TODO: Save all cached player skills to database
+        // Stop periodic save task
+        periodicSaveTask?.cancel()
+
+        // Save all cached player skills to database (synchronous on shutdown)
         if (::skillManager.isInitialized) {
+            logger.info("Saving all player skills...")
+            val saved = skillManager.saveAll()
+            logger.info("Saved skills for $saved players")
             skillManager.clearCache()
         }
         logger.info("PurrSkills disabled")
@@ -61,11 +79,44 @@ class PurrSkillsPlugin : JavaPlugin() {
      * Register all event listeners.
      */
     private fun registerListeners() {
+        // Player lifecycle (join/quit)
+        server.pluginManager.registerEvents(PlayerLifecycleListener(this), this)
+
+        // Skill XP sources
         server.pluginManager.registerEvents(MiningListener(this), this)
         server.pluginManager.registerEvents(FarmingListener(this), this)
         server.pluginManager.registerEvents(ForagingListener(this), this)
         server.pluginManager.registerEvents(CombatListener(this), this)
         server.pluginManager.registerEvents(FishingListener(this), this)
+    }
+
+    /**
+     * Start periodic autosave task.
+     * Saves all cached player skills to database asynchronously.
+     */
+    private fun startPeriodicSave() {
+        val intervalMinutes = config.getInt("skills.autosave-interval-minutes", 5)
+        val intervalTicks = intervalMinutes * 60 * 20L // minutes to ticks
+
+        periodicSaveTask = server.scheduler.runTaskTimerAsynchronously(
+            this,
+            Runnable {
+                try {
+                    val count = skillManager.getCachedPlayerCount()
+                    if (count == 0) return@Runnable
+
+                    val saved = skillManager.saveAll()
+                    logger.info("Autosave: Saved skills for $saved/$count players")
+                } catch (e: Exception) {
+                    logger.severe("Autosave failed: ${e.message}")
+                    e.printStackTrace()
+                }
+            },
+            intervalTicks,
+            intervalTicks,
+        )
+
+        logger.info("Periodic autosave started (interval: ${intervalMinutes}min)")
     }
 
     /**
