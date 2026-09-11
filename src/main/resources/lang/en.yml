@@ -1,0 +1,26 @@
+# PurrSkills English translations
+prefix: "&7[&d&lPurrSkills&7]"
+
+skills:
+  # Skill names
+  mining: "Mining"
+  foraging: "Foraging"
+  farming: "Farming"
+  combat: "Combat"
+  fishing: "Fishing"
+  
+  # XP gain message (actionbar)
+  xp-gain: "&a+{xp} {skill} XP &7({current}/{required})"
+  
+  # Level up messages
+  level-up: "&6&lLEVEL UP! &e{skill} &7→ &aLevel {level}"
+  level-up-subtitle: "&7Keep grinding to unlock more bonuses!"
+  
+  # Command messages
+  skills-header: "&d&lYour Skills"
+  skills-line: "&e{skill}: &7Level {level} &8({current}/{required} XP)"
+  skills-other-header: "&d&l{player}'s Skills"
+  
+  # Errors
+  player-not-found: "&cPlayer not found!"
+  no-permission: "&cYou don't have permission to do that!"
