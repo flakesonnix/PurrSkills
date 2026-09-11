@@ -5,6 +5,7 @@ import com.purrcore.db.Database
 import com.purrcore.i18n.I18n
 import gay.nyaa.purrskills.skill.PlayerSkills
 import gay.nyaa.purrskills.skill.Skill
+import gay.nyaa.purrskills.skill.farming.FarmingListener
 import gay.nyaa.purrskills.skill.mining.MiningListener
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
@@ -59,6 +60,7 @@ class PurrSkillsPlugin : JavaPlugin() {
      */
     private fun registerListeners() {
         server.pluginManager.registerEvents(MiningListener(this), this)
+        server.pluginManager.registerEvents(FarmingListener(this), this)
     }
 
     /**
