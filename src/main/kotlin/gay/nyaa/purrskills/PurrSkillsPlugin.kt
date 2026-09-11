@@ -3,6 +3,7 @@ package gay.nyaa.purrskills
 import com.purrcore.PurrCorePlugin
 import com.purrcore.db.Database
 import com.purrcore.i18n.I18n
+import gay.nyaa.purrskills.command.SkillsCommand
 import gay.nyaa.purrskills.db.SkillRepository
 import gay.nyaa.purrskills.listener.PlayerLifecycleListener
 import gay.nyaa.purrskills.skill.combat.CombatListener
@@ -55,6 +56,9 @@ class PurrSkillsPlugin : JavaPlugin() {
         // Register listeners
         registerListeners()
 
+        // Register commands
+        registerCommands()
+
         // Start periodic save task
         startPeriodicSave()
 
@@ -88,6 +92,15 @@ class PurrSkillsPlugin : JavaPlugin() {
         server.pluginManager.registerEvents(ForagingListener(this), this)
         server.pluginManager.registerEvents(CombatListener(this), this)
         server.pluginManager.registerEvents(FishingListener(this), this)
+    }
+
+    /**
+     * Register all commands.
+     */
+    private fun registerCommands() {
+        val skillsCommand = SkillsCommand(skillManager, i18n)
+        getCommand("skills")?.setExecutor(skillsCommand)
+        getCommand("skills")?.tabCompleter = skillsCommand
     }
 
     /**
