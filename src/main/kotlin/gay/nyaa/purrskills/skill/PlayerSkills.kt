@@ -51,5 +51,20 @@ data class PlayerSkills(
             }
             return PlayerSkills(playerUuid, initialSkills)
         }
+
+        /**
+         * Create PlayerSkills with specific skill profiles.
+         * Missing skills will be filled in with default (level 1, xp 0).
+         *
+         * @param playerUuid Player UUID
+         * @param skillMap Map of skills to profiles (can be partial)
+         * @return PlayerSkills with all 5 skills populated
+         */
+        fun create(playerUuid: UUID, skillMap: Map<Skill, SkillProfile>): PlayerSkills {
+            val allSkills = Skill.entries.associateWith { skill ->
+                skillMap[skill] ?: SkillProfile(skill, level = 1, xp = 0)
+            }
+            return PlayerSkills(playerUuid, allSkills)
+        }
     }
 }
