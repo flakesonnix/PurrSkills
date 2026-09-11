@@ -25,6 +25,19 @@ skills:
   player-not-found: "&cPlayer not found!"
   no-permission: "&cYou don't have permission to do that!"
 
+# GUI messages
+gui:
+  skills:
+    title: "&d&l{player}'s Skills"
+    skill-name: "&e&l{skill} {level}"
+    xp-progress: "&7Progress: &f{xp} &7/ &f{required} XP"
+    progress-bar: "&a{filled}&7{empty} &f{percent}%"
+    max-level: "&6&lMAX LEVEL"
+    rewards-header: "&b&lRewards:"
+    stat-line: "&7  • &f{stat}: &a+{value}"
+    power-level-name: "&6&lPower Level"
+    power-level-value: "&e{level}"
+
 commands:
   skills:
     usage: "&cUsage: /skills [player]"

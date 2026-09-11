@@ -14,6 +14,11 @@ commands:
     usage: /skills [player]
     permission: purrskills.skills
     permission-message: You don't have permission!
+  skillsmenu:
+    description: Open the visual skills menu
+    usage: /skillsmenu
+    permission: purrskills.skills
+    permission-message: You don't have permission!
   stats:
     description: View your stats from skills
     usage: /stats [player]

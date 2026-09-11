@@ -4,7 +4,10 @@ import com.purrcore.PurrCorePlugin
 import com.purrcore.db.Database
 import com.purrcore.i18n.I18n
 import gay.nyaa.purrskills.command.SkillsCommand
+import gay.nyaa.purrskills.command.SkillsMenuCommand
 import gay.nyaa.purrskills.db.SkillRepository
+import gay.nyaa.purrskills.gui.SkillMenuGUI
+import gay.nyaa.purrskills.gui.SkillMenuListener
 import gay.nyaa.purrskills.listener.PlayerLifecycleListener
 import gay.nyaa.purrskills.skill.combat.CombatListener
 import gay.nyaa.purrskills.skill.farming.FarmingListener
@@ -97,6 +100,9 @@ class PurrSkillsPlugin : JavaPlugin() {
         server.pluginManager.registerEvents(ForagingListener(this), this)
         server.pluginManager.registerEvents(CombatListener(this), this)
         server.pluginManager.registerEvents(FishingListener(this), this)
+
+        // GUI click listener
+        server.pluginManager.registerEvents(SkillMenuListener(i18n), this)
     }
 
     /**
@@ -110,6 +116,11 @@ class PurrSkillsPlugin : JavaPlugin() {
         val statsCommand = gay.nyaa.purrskills.command.StatsCommand(skillManager, statsManager, i18n)
         getCommand("stats")?.setExecutor(statsCommand)
         getCommand("stats")?.tabCompleter = statsCommand
+
+        // Skills menu GUI command
+        val gui = SkillMenuGUI(skillManager, i18n)
+        val skillsMenuCommand = SkillsMenuCommand(gui, i18n)
+        getCommand("skillsmenu")?.setExecutor(skillsMenuCommand)
     }
 
     /**
