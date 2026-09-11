@@ -28,8 +28,8 @@ class PurrSkillsPlugin : JavaPlugin() {
     private lateinit var database: Database
     private lateinit var i18n: I18n
     private lateinit var repository: SkillRepository
-    private lateinit var statsManager: StatsManager
-
+    lateinit var statsManager: StatsManager
+        private set
     lateinit var skillManager: SkillManager
         private set
 

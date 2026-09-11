@@ -36,6 +36,8 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.26.3")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.3")
     testImplementation("io.papermc.paper:paper-api:$paperVersion")
+    testImplementation("org.jetbrains.kotlin:kotlin-reflect")
+    testImplementation(files("../PurrCore/build/libs/purrcore-1.0.0.jar"))
 }
 
 java {

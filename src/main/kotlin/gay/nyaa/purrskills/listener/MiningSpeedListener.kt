@@ -30,7 +30,20 @@ import org.bukkit.potion.PotionEffectType
  * Only applies to blocks that grant Mining XP.
  * Runs at LOW priority to apply effects early in event chain.
  */
-class MiningSpeedListener(private val plugin: PurrSkillsPlugin) : Listener {
+class MiningSpeedListener : Listener {
+
+    private var plugin: PurrSkillsPlugin? = null
+    private var skillManager: gay.nyaa.purrskills.SkillManager? = null
+
+    // Primary constructor for production use
+    constructor(plugin: PurrSkillsPlugin) {
+        this.plugin = plugin
+    }
+
+    // Test constructor that accepts SkillManager directly
+    constructor(skillManager: gay.nyaa.purrskills.SkillManager) {
+        this.skillManager = skillManager
+    }
 
     companion object {
         private const val BASE_SPEED = 100.0
@@ -56,7 +69,8 @@ class MiningSpeedListener(private val plugin: PurrSkillsPlugin) : Listener {
         }
 
         // Get player's mining speed stat
-        val stats = plugin.skillManager.calculateStats(player.uniqueId)
+        val manager = skillManager ?: plugin!!.skillManager
+        val stats = manager.calculateStats(player.uniqueId)
         val miningSpeed = stats.getStat(StatType.MINING_SPEED)
 
         // Apply speed effect based on stat value

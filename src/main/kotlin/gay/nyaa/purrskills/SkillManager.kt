@@ -15,7 +15,7 @@ import org.bukkit.entity.Player
  * Manages player skills, XP awarding, notifications, persistence, and stat rewards.
  * Encapsulates skill-related business logic separately from plugin infrastructure.
  */
-class SkillManager(
+open class SkillManager(
     private val config: FileConfiguration,
     private val i18n: com.purrcore.i18n.I18n,
     private val repository: SkillRepository,
@@ -241,13 +241,13 @@ class SkillManager(
     fun getCachedPlayerCount(): Int = playerSkillsCache.size
 
     /**
-     * Calculate final stats for a player from all sources.
+     * Calculate stats for a player based on their skill levels.
      * Convenience method that delegates to StatsManager.
      *
      * @param uuid Player UUID
      * @return PlayerStats with calculated values
      */
-    fun calculateStats(uuid: UUID) = statsManager.calculateStats(uuid)
+    open fun calculateStats(uuid: UUID) = statsManager.calculateStats(uuid)
 
     /**
      * Get calculated stats for a player.
