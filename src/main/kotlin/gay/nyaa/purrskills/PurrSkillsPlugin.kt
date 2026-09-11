@@ -11,6 +11,7 @@ import gay.nyaa.purrskills.skill.farming.FarmingListener
 import gay.nyaa.purrskills.skill.fishing.FishingListener
 import gay.nyaa.purrskills.skill.foraging.ForagingListener
 import gay.nyaa.purrskills.skill.mining.MiningListener
+import gay.nyaa.purrskills.stats.StatsManager
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitTask
 
@@ -24,6 +25,7 @@ class PurrSkillsPlugin : JavaPlugin() {
     private lateinit var database: Database
     private lateinit var i18n: I18n
     private lateinit var repository: SkillRepository
+    private lateinit var statsManager: StatsManager
 
     lateinit var skillManager: SkillManager
         private set
@@ -50,8 +52,11 @@ class PurrSkillsPlugin : JavaPlugin() {
         // Initialize repository
         repository = SkillRepository(database, logger)
 
+        // Initialize stats manager
+        statsManager = StatsManager()
+
         // Initialize skill manager
-        skillManager = SkillManager(config, i18n, repository)
+        skillManager = SkillManager(config, i18n, repository, statsManager)
 
         // Register listeners
         registerListeners()
