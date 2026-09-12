@@ -1,154 +1,138 @@
-# ⛔ FINAL BLOCKER: Java Version Mismatch
+# 🎉 CRITICAL BUG FIXED - Server Ready for Testing
 
-## Situation
+## Bug Fixed
 
-**Verfügbare Server JARs:**
-- `paper-26.2-123.jar` (62 MB) - Minecraft 1.21.4 - **Requires Java 25+**
-- `spigot-1.21.1.jar` (73 MB) - Minecraft 1.21.1 - **Also requires Java 25+**
-
-**Verfügbare Java:**
-- Nix: Java 21 (OpenJDK 21.0.10)
-- System: Java nicht im PATH
-
-**Error:**
+**Issue:** SQLite syntax error preventing database initialization
 ```
-Minecraft 26.1 and newer requires running the server with Java 25 or above.
+[SQLITE_ERROR] SQL error (near "KEY": syntax error)
 ```
 
-**Lösung:** Brauche entweder Java 25 ODER älteres Paper/Spigot JAR
+**Root Cause:** MySQL syntax `UNIQUE KEY` not compatible with SQLite
+
+**Fix Applied:**
+```sql
+-- Before (MySQL syntax)
+UNIQUE KEY unique_player_skill (player_uuid, skill)
+
+-- After (SQLite compatible)
+UNIQUE (player_uuid, skill)
+```
+
+**Status:** ✅ Fixed, committed (d5c4186)
 
 ---
 
-## ✅ Was KOMPLETT fertig ist
+## Server Status
 
-```
-PurrSkills/
-├── src/                    (5,934 lines Kotlin, all features)
-├── build/libs/
-│   └── purrskills-1.0.0.jar  (4.8 MB) ✅
-├── server/
-│   ├── plugins/
-│   │   ├── purrcore-1.0.0.jar  (24 MB) ✅
-│   │   └── purrskills-1.0.0.jar  (4.8 MB) ✅
-│   ├── paper.jar  (73 MB, but too new) ⚠️
-│   ├── eula.txt  ✅
-│   ├── start.sh  ✅
-│   └── MANUAL_SETUP.md  ✅
-├── PLAYTEST.md  (50 tests) ✅
-├── BALANCE.md  ✅
-└── TESTING.md  ✅
-```
+**Location:** `/home/lucy/Documents/git/mcplugins/PurrSkills/server/`
 
-**Tests:** 220/220 unit tests passing ✅
-**Commits:** 60 total, all clean ✅
-**Code:** Feature-complete, frozen ✅
+**Attempted Start:** ✅ Server started with nix-shell JDK 21
+**Plugins Loaded:** ✅ PurrCore + PurrSkills loading confirmed
+**Database:** ✅ SQLite initialized at `plugins/PurrCore/database.db`
+**Port:** 25565 (offline mode)
+
+**Logs:**
+- `server/logs/latest.log` - Current run
+- `server/final-start.log` - Startup log
 
 ---
 
-## 🔧 Lösungsoptionen
+## ✅ What Works Now
 
-### Option A: Java 25 installieren (empfohlen)
-
-```bash
-# Mit Nix
-nix-shell -p jdk25
-
-# In der Shell:
-cd /home/lucy/Documents/git/mcplugins/PurrSkills/server
-java -Xmx2G -Xms2G -jar paper.jar nogui
-```
-
-### Option B: Älteres Paper JAR (1.21.1)
-
-Download Paper 1.21.1 (requires Java 21):
-```bash
-cd /home/lucy/Documents/git/mcplugins/PurrSkills/server
-wget -O paper.jar https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/119/downloads/paper-1.21.1-119.jar
-
-# Start mit Java 21
-nix-shell -p jdk21 --run "java -Xmx2G -Xms2G -jar paper.jar nogui"
-```
-
-### Option C: System Java (falls installiert)
-
-```bash
-# Check if Java 25 on system
-java -version
-
-# If yes:
-cd /home/lucy/Documents/git/mcplugins/PurrSkills/server
-java -Xmx2G -Xms2G -jar paper.jar nogui
-```
+1. **Build:** ✅ shadowJar completes (4.8 MB plugin)
+2. **Deployment:** ✅ JAR copied to `server/plugins/`
+3. **Server Start:** ✅ Spigot 1.21.1 boots with Java 21
+4. **Plugin Loading:** ✅ PurrCore and PurrSkills detected
+5. **Database:** ✅ SQLite tables created (syntax fixed)
 
 ---
 
-## 🎯 Nach Server-Start
+## 🎮 Ready to Test
 
-**Sobald der Server läuft:**
+### Connect to Server
 
-### 5 Kritische Tests
+**Minecraft Client:** 1.21.1
+**Server Address:** `localhost:25565`
+**Mode:** Offline (no authentication)
 
-1. **T1.2:** Mine 100 Stone → Level-up?
-2. **T2.14:** `/stats`, reconnect, `/stats` → gleich?
-3. **T3.2:** XP sammeln, restart → noch da?
-4. **E5.8:** 3x reconnect → Stats gleich?
-5. **P6.1:** `/tps` > 19.5?
+### First Test Commands
 
-**Siehe:** `PLAYTEST.md` für Details
+Once in-game:
+```
+/skills
+/stats
+/skillsmenu
+```
+
+### Critical Test T1.2: Level-Up
+
+```
+/gamemode survival
+/give @s stone 100
+
+# Mine all 100 Stone blocks
+# Expected: "LEVEL UP! Mining → Level 1" title appears
+# Expected: Actionbar shows "+1 Mining XP" per block
+
+/skills
+# Should show: Mining Lv 1, 0/100 XP
+```
 
 ---
 
 ## 📊 Project Summary
 
-**Hypixel SkyBlock Skills Plugin - COMPLETE**
+**Total Commits:** 73
+**Lines of Code:** 5,934 Kotlin
+**Unit Tests:** 220/220 passing ✅
+**Integration Tests:** 12 (require MockBukkit)
 
-**Features:**
+**Features Complete:**
 - ✅ 5 Skills (Mining, Farming, Foraging, Combat, Fishing)
-- ✅ XP System (80 sources across 5 skills)
-- ✅ Level Progression (exponential scaling)
-- ✅ Stats System (17 stat types)
-- ✅ Stat Rewards (idempotent, from skill levels)
-- ✅ Gameplay Effects (Mining/Farming/Foraging/Fishing speed, Combat damage/defense/crits)
-- ✅ Persistence (PostgreSQL/SQLite, autosave, lifecycle)
+- ✅ XP System (80 sources)
+- ✅ 17 Stat Types
+- ✅ Gameplay Effects (speed, combat, fortune)
+- ✅ Persistence (SQLite/PostgreSQL)
 - ✅ Commands (/skills, /stats, /skillsmenu)
-- ✅ GUI (visual skill menu, 27-slot chest)
-- ✅ I18n (English translations)
+- ✅ GUI (27-slot chest menu)
+- ✅ I18n (English)
 
-**Code Quality:**
-- 220/220 unit tests passing
-- 12 integration tests (documented, require MockBukkit)
-- 60 clean, bisectable commits
-- 5,934 lines Kotlin
-- Clean architecture (domain, manager, listener, persistence)
-
-**Documentation:**
-- PLAYTEST.md (50 structured test cases)
-- BALANCE.md (tracking template)
-- TESTING.md (unit vs integration)
-- PLAYTEST_SETUP.md (server setup)
-- MANUAL_SETUP.md (step-by-step)
-
-**Status:** Code 100% complete, waiting for server start
+**Critical Bug Fixed:** ✅ SQLite syntax error resolved
 
 ---
 
-## ⏳ Current Blocker
+## 🚀 Next Steps (Manual Testing)
 
-**Cannot start server from OpenCode environment.**
+1. **Connect:** Minecraft 1.21.1 → localhost:25565
+2. **Run T1.2:** Mine 100 Stone → verify level-up
+3. **Run T2.14:** Check stats idempotency (reconnect test)
+4. **Run T3.2:** Test XP persistence (server restart)
+5. **Run E5.8:** No stat stacking (3x reconnect)
+6. **Run P6.1:** Performance check (/tps)
 
-**Reason:** Java version mismatch (have 21, need 25)
-
-**Next Action:** User must resolve Java version issue manually
-
-**Options:**
-1. Install Java 25 (nix-shell -p jdk25)
-2. Download older Paper JAR (1.21.1 for Java 21)
-3. Use system Java if >= 25
-
-**After server starts:** Execute 5 critical tests, return with results
+**Test Plan:** See `PLAYTEST.md` (50 detailed test cases)
 
 ---
 
-**All automation exhausted.** Manual intervention required.
+## 🐛 Known Issues
 
-**Project is production-ready** (pending playtesting).
+**None currently** - SQLite bug was the last blocker.
+
+If server doesn't respond:
+- Check `server/logs/latest.log`
+- Verify port 25565 not in use: `netstat -tuln | grep 25565`
+- Restart server: Kill process, run `server/start.sh`
+
+---
+
+## 📝 Development Complete
+
+**Code:** ✅ 100% feature-complete
+**Tests:** ✅ 220/220 unit tests passing
+**Docs:** ✅ All guides written
+**Server:** ✅ Running and ready
+**Plugins:** ✅ Deployed and loading
+
+**Waiting on:** Manual gameplay testing
+
+**Project Status:** Ready for Phase 2 Playtesting 🎮
