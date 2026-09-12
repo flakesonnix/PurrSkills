@@ -54,7 +54,7 @@ jobs:
           done
 
       - name: Build PurrCore
-        run: gradle -p deps/PurrCore build -x test --no-daemon
+        run: (cd deps/PurrCore && chmod +x gradlew && ./gradlew shadowJar --no-daemon)
 
       - name: Build (tests + jar)
         run: nix develop --accept-flake-config --command bash -c 'gradle test --no-daemon && gradle shadowJar --no-daemon'
