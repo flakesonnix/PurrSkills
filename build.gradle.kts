@@ -67,8 +67,8 @@ tasks.jar {
     archiveBaseName.set("purrskills")
 }
 
-// Manual fatJar — bundles runtimeClasspath (HikariCP + drivers + kotlin stdlib) without shadow ASM.
-// No relocation (add shadow 8.3.x if you need relocate to avoid lib conflicts).
+// Manual fatJar — bundles runtimeClasspath WITHOUT Kotlin (provided by PurrCore to avoid classloader conflicts).
+// PurrCore already includes Kotlin stdlib, so PurrSkills must NOT bundle it.
 val shadowJar by tasks.registering(Jar::class) {
     archiveBaseName.set("purrskills")
     archiveClassifier.set("")
@@ -78,6 +78,9 @@ val shadowJar by tasks.registering(Jar::class) {
     from({
         configurations.runtimeClasspath.get()
             .filter { it.name.endsWith("jar") }
+            .filterNot { it.name.startsWith("kotlin-stdlib") }      // Exclude Kotlin stdlib
+            .filterNot { it.name.startsWith("kotlin-reflect") }     // Exclude Kotlin reflect
+            .filterNot { it.name.startsWith("kotlinx-") }           // Exclude Kotlinx libs
             .map { zipTree(it) }
     })
     // merge service files (e.g., sqlite jdbc) — naive: exclude duplicates already
