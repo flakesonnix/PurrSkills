@@ -1,0 +1,15 @@
+🎮 Starting PurrSkills Test Server...
+
+Location: /home/lucy/Documents/git/mcplugins/PurrSkills/server
+Port: 25565 (localhost only)
+Minecraft: 1.21.4 (Paper 26.2-123)
+Plugins: PurrCore + PurrSkills
+
+✅ Paper 26.2-123 JAR found (62 MB)
+✅ Plugins ready (PurrCore + PurrSkills)
+✅ Loading Java 21 via nix-shell...
+
+Starting server (this may take 30-60 seconds)...
+----------------------------------------
+
+Minecraft 26.1 and newer requires running the server with Java 25 or above. For information on how to update Java, see https://docs.papermc.io/misc/java-install

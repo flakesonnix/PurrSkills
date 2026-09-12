@@ -8,22 +8,8 @@ author: flakesonnix
 description: MCMMO-style skills system with XP, levels, and passive bonuses
 website: https://github.com/flakesonnix/PurrSkills
 
-commands:
-  skills:
-    description: View your skill levels
-    usage: /skills [player]
-    permission: purrskills.skills
-    permission-message: You don't have permission!
-  skillsmenu:
-    description: Open the visual skills menu
-    usage: /skillsmenu
-    permission: purrskills.skills
-    permission-message: You don't have permission!
-  stats:
-    description: View your stats from skills
-    usage: /stats [player]
-    permission: purrskills.stats
-    permission-message: You don't have permission!
+# Paper 26.2+ does not support plugin.yml command definitions
+# Commands are registered programmatically via JavaPlugin#registerCommand
 
 permissions:
   purrskills.skills:

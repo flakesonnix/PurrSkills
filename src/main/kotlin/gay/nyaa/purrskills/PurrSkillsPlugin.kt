@@ -15,6 +15,8 @@ import gay.nyaa.purrskills.skill.fishing.FishingListener
 import gay.nyaa.purrskills.skill.foraging.ForagingListener
 import gay.nyaa.purrskills.skill.mining.MiningListener
 import gay.nyaa.purrskills.stats.StatsManager
+import org.bukkit.command.Command
+import org.bukkit.command.CommandSender
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitTask
 
@@ -124,21 +126,68 @@ class PurrSkillsPlugin : JavaPlugin() {
     }
 
     /**
-     * Register all commands.
+     * Register all commands for Paper 26.2+.
+     * Paper plugins no longer support plugin.yml command declarations.
      */
     private fun registerCommands() {
+        // Skills command
         val skillsCommand = SkillsCommand(skillManager, i18n)
-        getCommand("skills")?.setExecutor(skillsCommand)
-        getCommand("skills")?.tabCompleter = skillsCommand
+        server.commandMap.register(
+            "purrskills",
+            object : Command(
+                "skills",
+                "View your skill levels",
+                "/skills [player]",
+                listOf("skill")
+            ) {
+                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean {
+                    return skillsCommand.onCommand(sender, this, label, args)
+                }
 
+                override fun tabComplete(sender: CommandSender, alias: String, args: Array<out String>): List<String> {
+                    return skillsCommand.onTabComplete(sender, this, alias, args) ?: emptyList()
+                }
+            }
+        )
+
+        // Stats command
         val statsCommand = gay.nyaa.purrskills.command.StatsCommand(skillManager, statsManager, i18n)
-        getCommand("stats")?.setExecutor(statsCommand)
-        getCommand("stats")?.tabCompleter = statsCommand
+        server.commandMap.register(
+            "purrskills",
+            object : Command(
+                "stats",
+                "View your stats from skills",
+                "/stats [player]",
+                listOf("stat")
+            ) {
+                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean {
+                    return statsCommand.onCommand(sender, this, label, args)
+                }
+
+                override fun tabComplete(sender: CommandSender, alias: String, args: Array<out String>): List<String> {
+                    return statsCommand.onTabComplete(sender, this, alias, args) ?: emptyList()
+                }
+            }
+        )
 
         // Skills menu GUI command
         val gui = SkillMenuGUI(skillManager, i18n)
         val skillsMenuCommand = SkillsMenuCommand(gui, i18n)
-        getCommand("skillsmenu")?.setExecutor(skillsMenuCommand)
+        server.commandMap.register(
+            "purrskills",
+            object : Command(
+                "skillsmenu",
+                "Open the visual skills menu",
+                "/skillsmenu",
+                listOf("skillmenu", "smenu")
+            ) {
+                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean {
+                    return skillsMenuCommand.onCommand(sender, this, label, args)
+                }
+            }
+        )
+
+        logger.info("Registered commands: /skills, /stats, /skillsmenu")
     }
 
     /**
