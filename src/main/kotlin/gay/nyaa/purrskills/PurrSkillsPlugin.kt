@@ -184,7 +184,7 @@ class PurrSkillsPlugin : JavaPlugin() {
               level INT NOT NULL DEFAULT 1,
               xp INT NOT NULL DEFAULT 0,
               last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-              UNIQUE KEY unique_player_skill (player_uuid, skill)
+              UNIQUE (player_uuid, skill)
             )
             """.trimIndent(),
             if (database.isSqlite()) {

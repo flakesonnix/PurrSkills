@@ -1,0 +1,15 @@
+Unbundling libraries to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler
+Starting server
+Loading libraries, please wait...
+[09:41:46] [ServerMain/WARN]: Did not find udev library in operating system. Some features may not work.
+[09:42:09] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[09:42:10] [ServerMain/ERROR]: Failed to start the minecraft server
+net.minecraft.util.SessionLock$ExceptionWorldConflict: /home/lucy/Documents/git/mcplugins/PurrSkills/server/./world/session.lock: already locked (possibly by other Minecraft instance?)
+	at net.minecraft.util.SessionLock$ExceptionWorldConflict.a(SourceFile:95) ~[spigot-1.21.1-R0.1-SNAPSHOT.jar:4344-Spigot-a759b62-19bf846]
+	at net.minecraft.util.SessionLock.a(SourceFile:41) ~[spigot-1.21.1-R0.1-SNAPSHOT.jar:4344-Spigot-a759b62-19bf846]
+	at net.minecraft.world.level.storage.Convertable$ConversionSession.<init>(Convertable.java:518) ~[spigot-1.21.1-R0.1-SNAPSHOT.jar:4344-Spigot-a759b62-19bf846]
+	at net.minecraft.world.level.storage.Convertable.validateAndCreateAccess(Convertable.java:424) ~[spigot-1.21.1-R0.1-SNAPSHOT.jar:4344-Spigot-a759b62-19bf846]
+	at net.minecraft.server.Main.main(Main.java:172) ~[spigot-1.21.1-R0.1-SNAPSHOT.jar:4344-Spigot-a759b62-19bf846]
+	at org.bukkit.craftbukkit.Main.main(Main.java:215) ~[spigot-1.21.1-R0.1-SNAPSHOT.jar:4344-Spigot-a759b62-19bf846]
+	at org.bukkit.craftbukkit.bootstrap.Main.lambda$run$0(Main.java:60) ~[paper.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]

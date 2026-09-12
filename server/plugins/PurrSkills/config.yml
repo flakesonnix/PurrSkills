@@ -1,0 +1,32 @@
+# PurrSkills — skill-specific configuration
+# Database config is in PurrCore (plugins/PurrCore/config.yml)
+
+skills:
+  # Which skills are enabled?
+  enabled-skills:
+    - mining
+    - foraging
+    - farming
+    - combat
+    - fishing
+  
+  # Show actionbar XP gains?
+  show-xp-actionbar: true
+  
+  # Show level-up title?
+  show-levelup-title: true
+  
+  # Play level-up sound?
+  levelup-sound: true
+  levelup-sound-type: ENTITY_PLAYER_LEVELUP
+  
+  # Autosave interval in minutes
+  # Player skills are saved to database:
+  # - When player quits
+  # - Periodically (this interval)
+  # - On server shutdown
+  autosave-interval-minutes: 5
+  
+# Messages use PurrCore I18n system
+# See lang/en.yml for message templates
+language: en

@@ -1,0 +1,296 @@
+Unbundling libraries to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler
+Unpacking spigot-1.21.1-R0.1-SNAPSHOT.jar (versions:spigot-1.21.1-R0.1-SNAPSHOT.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/versions/spigot-1.21.1-R0.1-SNAPSHOT.jar
+Unpacking asm-9.7.1.jar (libraries:asm-9.7.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/asm-9.7.1.jar
+Unpacking asm-commons-9.7.1.jar (libraries:asm-commons-9.7.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/asm-commons-9.7.1.jar
+Unpacking authlib-6.0.54.jar (libraries:authlib-6.0.54.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/authlib-6.0.54.jar
+Unpacking brigadier-1.2.9.jar (libraries:brigadier-1.2.9.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/brigadier-1.2.9.jar
+Unpacking bungeecord-chat-1.20-R0.2.jar (libraries:bungeecord-chat-1.20-R0.2.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/bungeecord-chat-1.20-R0.2.jar
+Unpacking checker-qual-3.33.0.jar (libraries:checker-qual-3.33.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/checker-qual-3.33.0.jar
+Unpacking commons-codec-1.16.0.jar (libraries:commons-codec-1.16.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/commons-codec-1.16.0.jar
+Unpacking commons-io-2.15.1.jar (libraries:commons-io-2.15.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/commons-io-2.15.1.jar
+Unpacking commons-lang-2.6.jar (libraries:commons-lang-2.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/commons-lang-2.6.jar
+Unpacking commons-lang3-3.14.0.jar (libraries:commons-lang3-3.14.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/commons-lang3-3.14.0.jar
+Unpacking datafixerupper-8.0.16.jar (libraries:datafixerupper-8.0.16.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/datafixerupper-8.0.16.jar
+Unpacking error_prone_annotations-2.18.0.jar (libraries:error_prone_annotations-2.18.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/error_prone_annotations-2.18.0.jar
+Unpacking failureaccess-1.0.1.jar (libraries:failureaccess-1.0.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/failureaccess-1.0.1.jar
+Unpacking fastutil-8.5.12.jar (libraries:fastutil-8.5.12.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/fastutil-8.5.12.jar
+Unpacking gson-2.10.1.jar (libraries:gson-2.10.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/gson-2.10.1.jar
+Unpacking guava-32.1.2-jre.jar (libraries:guava-32.1.2-jre.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/guava-32.1.2-jre.jar
+Unpacking httpclient-4.5.14.jar (libraries:httpclient-4.5.14.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/httpclient-4.5.14.jar
+Unpacking httpcore-4.4.16.jar (libraries:httpcore-4.4.16.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/httpcore-4.4.16.jar
+Unpacking j2objc-annotations-2.8.jar (libraries:j2objc-annotations-2.8.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/j2objc-annotations-2.8.jar
+Unpacking javax.inject-1.jar (libraries:javax.inject-1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/javax.inject-1.jar
+Unpacking jcl-over-slf4j-1.7.36.jar (libraries:jcl-over-slf4j-1.7.36.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/jcl-over-slf4j-1.7.36.jar
+Unpacking jline-2.12.1.jar (libraries:jline-2.12.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/jline-2.12.1.jar
+Unpacking jna-5.14.0.jar (libraries:jna-5.14.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/jna-5.14.0.jar
+Unpacking jna-platform-5.14.0.jar (libraries:jna-platform-5.14.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/jna-platform-5.14.0.jar
+Unpacking joml-1.10.5.jar (libraries:joml-1.10.5.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/joml-1.10.5.jar
+Unpacking jopt-simple-5.0.4.jar (libraries:jopt-simple-5.0.4.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/jopt-simple-5.0.4.jar
+Unpacking json-simple-1.1.1.jar (libraries:json-simple-1.1.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/json-simple-1.1.1.jar
+Unpacking jsr305-3.0.2.jar (libraries:jsr305-3.0.2.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/jsr305-3.0.2.jar
+Unpacking listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar (libraries:listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+Unpacking log4j-api-2.22.1.jar (libraries:log4j-api-2.22.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/log4j-api-2.22.1.jar
+Unpacking log4j-core-2.22.1.jar (libraries:log4j-core-2.22.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/log4j-core-2.22.1.jar
+Unpacking log4j-iostreams-2.22.1.jar (libraries:log4j-iostreams-2.22.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/log4j-iostreams-2.22.1.jar
+Unpacking log4j-slf4j2-impl-2.22.1.jar (libraries:log4j-slf4j2-impl-2.22.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/log4j-slf4j2-impl-2.22.1.jar
+Unpacking logging-1.2.7.jar (libraries:logging-1.2.7.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/logging-1.2.7.jar
+Unpacking lz4-java-1.8.0.jar (libraries:lz4-java-1.8.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/lz4-java-1.8.0.jar
+Unpacking maven-artifact-3.9.6.jar (libraries:maven-artifact-3.9.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-artifact-3.9.6.jar
+Unpacking maven-builder-support-3.9.6.jar (libraries:maven-builder-support-3.9.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-builder-support-3.9.6.jar
+Unpacking maven-model-3.9.6.jar (libraries:maven-model-3.9.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-model-3.9.6.jar
+Unpacking maven-model-builder-3.9.6.jar (libraries:maven-model-builder-3.9.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-model-builder-3.9.6.jar
+Unpacking maven-repository-metadata-3.9.6.jar (libraries:maven-repository-metadata-3.9.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-repository-metadata-3.9.6.jar
+Unpacking maven-resolver-api-1.9.18.jar (libraries:maven-resolver-api-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-api-1.9.18.jar
+Unpacking maven-resolver-connector-basic-1.9.18.jar (libraries:maven-resolver-connector-basic-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-connector-basic-1.9.18.jar
+Unpacking maven-resolver-impl-1.9.18.jar (libraries:maven-resolver-impl-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-impl-1.9.18.jar
+Unpacking maven-resolver-named-locks-1.9.18.jar (libraries:maven-resolver-named-locks-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-named-locks-1.9.18.jar
+Unpacking maven-resolver-provider-3.9.6.jar (libraries:maven-resolver-provider-3.9.6.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-provider-3.9.6.jar
+Unpacking maven-resolver-spi-1.9.18.jar (libraries:maven-resolver-spi-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-spi-1.9.18.jar
+Unpacking maven-resolver-transport-http-1.9.18.jar (libraries:maven-resolver-transport-http-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-transport-http-1.9.18.jar
+Unpacking maven-resolver-util-1.9.18.jar (libraries:maven-resolver-util-1.9.18.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/maven-resolver-util-1.9.18.jar
+Unpacking mysql-connector-j-8.4.0.jar (libraries:mysql-connector-j-8.4.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/mysql-connector-j-8.4.0.jar
+Unpacking netty-buffer-4.1.97.Final.jar (libraries:netty-buffer-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-buffer-4.1.97.Final.jar
+Unpacking netty-codec-4.1.97.Final.jar (libraries:netty-codec-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-codec-4.1.97.Final.jar
+Unpacking netty-common-4.1.97.Final.jar (libraries:netty-common-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-common-4.1.97.Final.jar
+Unpacking netty-handler-4.1.97.Final.jar (libraries:netty-handler-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-handler-4.1.97.Final.jar
+Unpacking netty-resolver-4.1.97.Final.jar (libraries:netty-resolver-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-resolver-4.1.97.Final.jar
+Unpacking netty-transport-4.1.97.Final.jar (libraries:netty-transport-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-transport-4.1.97.Final.jar
+Unpacking netty-transport-classes-epoll-4.1.97.Final.jar (libraries:netty-transport-classes-epoll-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-transport-classes-epoll-4.1.97.Final.jar
+Unpacking netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar (libraries:netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar
+Unpacking netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar (libraries:netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar
+Unpacking netty-transport-native-unix-common-4.1.97.Final.jar (libraries:netty-transport-native-unix-common-4.1.97.Final.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/netty-transport-native-unix-common-4.1.97.Final.jar
+Unpacking org.eclipse.sisu.inject-0.9.0.M2.jar (libraries:org.eclipse.sisu.inject-0.9.0.M2.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/org.eclipse.sisu.inject-0.9.0.M2.jar
+Unpacking oshi-core-6.4.10.jar (libraries:oshi-core-6.4.10.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/oshi-core-6.4.10.jar
+Unpacking plexus-interpolation-1.26.jar (libraries:plexus-interpolation-1.26.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/plexus-interpolation-1.26.jar
+Unpacking plexus-utils-3.5.1.jar (libraries:plexus-utils-3.5.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/plexus-utils-3.5.1.jar
+Unpacking protobuf-java-3.25.1.jar (libraries:protobuf-java-3.25.1.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/protobuf-java-3.25.1.jar
+Unpacking slf4j-api-2.0.9.jar (libraries:slf4j-api-2.0.9.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/slf4j-api-2.0.9.jar
+Unpacking snakeyaml-2.2.jar (libraries:snakeyaml-2.2.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/snakeyaml-2.2.jar
+Unpacking spigot-api-1.21.1-R0.1-SNAPSHOT.jar (libraries:spigot-api-1.21.1-R0.1-SNAPSHOT.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/spigot-api-1.21.1-R0.1-SNAPSHOT.jar
+Unpacking sqlite-jdbc-3.46.0.0.jar (libraries:sqlite-jdbc-3.46.0.0.jar) to /home/lucy/Documents/git/mcplugins/PurrSkills/server/bundler/libraries/sqlite-jdbc-3.46.0.0.jar
+Starting server
+Loading libraries, please wait...
+[09:39:13] [ServerMain/WARN]: Did not find udev library in operating system. Some features may not work.
+[09:39:27] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[09:39:27] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
+[09:39:30] [ServerMain/INFO]: No existing world data, creating new world
+[09:39:31] [ServerMain/INFO]: Loaded 1290 recipes
+[09:39:13] [ServerMain/WARN]: Did not find udev library in operating system. Some features may not work.
+[09:39:27] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[09:39:27] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
+[09:39:30] [ServerMain/INFO]: No existing world data, creating new world
+[09:39:31] [ServerMain/INFO]: Loaded 1290 recipes
+[09:39:33] [Server thread/INFO]: Starting minecraft server version 1.21.1
+[09:39:33] [Server thread/INFO]: Loading properties
+[09:39:34] [Server thread/INFO]: This server is running CraftBukkit version 4344-Spigot-a759b62-19bf846 (MC: 1.21.1) (Implementing API version 1.21.1-R0.1-SNAPSHOT)
+[09:39:35] [Server thread/INFO]: *** This version of Spigot contains changes to some enums. If you notice that plugins no longer work after updating, please report this to the developers of those plugins first. ***
+[09:39:35] [Server thread/INFO]: *** If you cannot update those plugins, you can try setting `settings.compatibility.enum-compatibility-mode` to `true` in `bukkit.yml`. ***
+[09:39:35] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[09:39:35] [Server thread/INFO]: Using 4 threads for Netty based IO
+[09:39:35] [Server thread/INFO]: Debug logging is disabled
+[09:39:35] [Server thread/INFO]: Default game type: SURVIVAL
+[09:39:35] [Server thread/INFO]: Generating keypair
+[09:39:35] [Server thread/INFO]: Starting Minecraft server on *:25565
+[09:39:36] [Server thread/INFO]: Using epoll channel type
+[09:39:36] [Server thread/INFO]: [PurrCore] Loading PurrCore v1.0.0
+[09:39:36] [Server thread/INFO]: [PurrSkills] Loading PurrSkills v1.0.0
+[09:39:37] [Server thread/INFO]: Preparing level "world"
+[09:39:37] [Server thread/INFO]: -------- World Settings For [world] --------
+[09:39:37] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Cane Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Melon Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Potato Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Vine Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[09:39:37] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[09:39:37] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[09:39:37] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[09:39:37] [Server thread/INFO]: Mob Spawn Range: 6
+[09:39:37] [Server thread/INFO]: Experience Merge Radius: 3.0
+[09:39:37] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[09:39:37] [Server thread/INFO]: Max TNT Explosions: 100
+[09:39:37] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[09:39:37] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[09:39:37] [Server thread/INFO]: View Distance: 10
+[09:39:37] [Server thread/INFO]: Simulation Distance: 10
+[09:39:37] [Server thread/INFO]: Item Despawn Rate: 6000
+[09:39:37] [Server thread/INFO]: Item Merge Radius: 2.5
+[09:39:37] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[09:39:37] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[09:39:37] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[09:39:53] [Server thread/INFO]: -------- World Settings For [world_nether] --------
+[09:39:53] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Cane Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Melon Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Potato Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Vine Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[09:39:53] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[09:39:53] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[09:39:53] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[09:39:53] [Server thread/INFO]: Mob Spawn Range: 6
+[09:39:53] [Server thread/INFO]: Experience Merge Radius: 3.0
+[09:39:53] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[09:39:53] [Server thread/INFO]: Max TNT Explosions: 100
+[09:39:53] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[09:39:53] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[09:39:53] [Server thread/INFO]: View Distance: 10
+[09:39:53] [Server thread/INFO]: Simulation Distance: 10
+[09:39:53] [Server thread/INFO]: Item Despawn Rate: 6000
+[09:39:53] [Server thread/INFO]: Item Merge Radius: 2.5
+[09:39:53] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[09:39:53] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[09:39:53] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[09:39:57] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
+[09:39:57] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Cane Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Melon Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Potato Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Vine Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[09:39:57] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[09:39:57] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[09:39:57] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[09:39:57] [Server thread/INFO]: Mob Spawn Range: 6
+[09:39:57] [Server thread/INFO]: Experience Merge Radius: 3.0
+[09:39:57] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[09:39:57] [Server thread/INFO]: Max TNT Explosions: 100
+[09:39:57] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[09:39:57] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[09:39:57] [Server thread/INFO]: View Distance: 10
+[09:39:57] [Server thread/INFO]: Simulation Distance: 10
+[09:39:57] [Server thread/INFO]: Item Despawn Rate: 6000
+[09:39:57] [Server thread/INFO]: Item Merge Radius: 2.5
+[09:39:57] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[09:39:57] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[09:39:57] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[09:39:58] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[09:39:59] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[09:39:59] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:00] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:00] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:40:01] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:40:01] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[09:40:01] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:02] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:02] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:03] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:40:03] [Worker-Main-2/INFO]: Preparing spawn area: 16%
+[09:40:04] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[09:40:04] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[09:40:05] [Worker-Main-1/INFO]: Preparing spawn area: 18%
+[09:40:05] [Worker-Main-1/INFO]: Preparing spawn area: 18%
+[09:40:06] [Worker-Main-1/INFO]: Preparing spawn area: 18%
+[09:40:06] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[09:40:07] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[09:40:07] [Worker-Main-2/INFO]: Preparing spawn area: 34%
+[09:40:08] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[09:40:08] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:09] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:09] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:10] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:10] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[09:40:11] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:11] [Worker-Main-2/INFO]: Preparing spawn area: 83%
+[09:40:11] [Server thread/INFO]: Time elapsed: 13057 ms
+[09:40:11] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[09:40:12] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:12] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:12] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[09:40:13] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:40:13] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[09:40:14] [Worker-Main-1/INFO]: Preparing spawn area: 18%
+[09:40:14] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[09:40:15] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[09:40:15] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:16] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[09:40:16] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[09:40:17] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[09:40:17] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[09:40:18] [Worker-Main-1/INFO]: Preparing spawn area: 87%
+[09:40:18] [Server thread/INFO]: Time elapsed: 6872 ms
+[09:40:18] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[09:40:18] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:40:19] [Worker-Main-2/INFO]: Preparing spawn area: 10%
+[09:40:19] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[09:40:20] [Server thread/INFO]: Time elapsed: 1293 ms
+[09:40:20] [Server thread/INFO]: [PurrCore] Enabling PurrCore v1.0.0
+[09:40:20] [Server thread/INFO]: [PurrCore] I18n loaded lang=en (8 keys)
+[09:40:20] [Server thread/INFO]: [PurrCore] SQLite URL: jdbc:sqlite:/home/lucy/Documents/git/mcplugins/PurrSkills/server/plugins/PurrCore/database.db
+[09:40:20] [Server thread/INFO]: PurrCore-Hikari - Starting...
+[09:40:21] [Server thread/INFO]: PurrCore-Hikari - Added connection org.sqlite.jdbc4.JDBC4Connection@72405b1d
+[09:40:21] [Server thread/INFO]: PurrCore-Hikari - Start completed.
+[09:40:21] [Server thread/INFO]: [PurrCore] DB connected [sqlite] pool=1
+[09:40:21] [Server thread/INFO]: [PurrCore] DB migrate done (PurrCore)
+[09:40:21] [Server thread/INFO]: [PurrCore] PurrCore enabled (DB=ok) — use everywhere
+[09:40:21] [Server thread/INFO]: [PurrSkills] Enabling PurrSkills v1.0.0
+[09:40:22] [Server thread/ERROR]: [PurrSkills] Failed to initialize PurrSkills database: [SQLITE_ERROR] SQL error or missing database (near "KEY": syntax error)
+[09:40:22] [Server thread/WARN]: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "KEY": syntax error)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.core.DB.newSQLException(DB.java:1179)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.core.DB.newSQLException(DB.java:1190)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.core.DB.throwex(DB.java:1150)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.core.NativeDB.prepare_utf8(Native Method)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.core.NativeDB.prepare(NativeDB.java:132)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.core.DB.prepare(DB.java:264)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.jdbc3.JDBC3Statement.lambda$execute$0(JDBC3Statement.java:54)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:454)
+[09:40:22] [Server thread/WARN]: 	at org.sqlite.jdbc3.JDBC3Statement.execute(JDBC3Statement.java:43)
+[09:40:22] [Server thread/WARN]: 	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+[09:40:22] [Server thread/WARN]: 	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+[09:40:22] [Server thread/WARN]: 	at gay.nyaa.purrskills.PurrSkillsPlugin.migrateDatabase(PurrSkillsPlugin.kt:201)
+[09:40:22] [Server thread/WARN]: 	at gay.nyaa.purrskills.PurrSkillsPlugin.onEnable(PurrSkillsPlugin.kt:49)
+[09:40:22] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:267)
+[09:40:22] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:342)
+[09:40:22] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:492)
+[09:40:22] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_21_R1.CraftServer.enablePlugin(CraftServer.java:576)
+[09:40:22] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_21_R1.CraftServer.enablePlugins(CraftServer.java:490)
+[09:40:22] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:641)
+[09:40:22] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:426)
+[09:40:22] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.e(DedicatedServer.java:269)
+[09:40:22] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.y(MinecraftServer.java:1017)
+[09:40:22] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:318)
+[09:40:22] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1583)
+[09:40:22] [Server thread/INFO]: [PurrSkills] Periodic autosave started (interval: 5min)
+[09:40:22] [Server thread/INFO]: [PurrSkills] PurrSkills enabled - using PurrCore (DB=true)
+[09:40:22] [Server thread/INFO]: Done (45.477s)! For help, type "help"
+[09:40:39] [Thread-0/INFO]: Stopping server
+[09:40:39] [Thread-0/INFO]: [PurrSkills] Disabling PurrSkills v1.0.0
