@@ -101,48 +101,48 @@
 
 #### XP Balance
 
-**Issue ID:** B-001  
-**Category:** XP  
-**Description:** _____________  
-**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low  
+**Issue ID:** B-001
+**Category:** XP
+**Description:** _____________
+**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low
 **Recommendation:** _____________
 
 ---
 
-**Issue ID:** B-002  
-**Category:** XP  
-**Description:** _____________  
-**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low  
+**Issue ID:** B-002
+**Category:** XP
+**Description:** _____________
+**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low
 **Recommendation:** _____________
 
 ---
 
 #### Stat Balance
 
-**Issue ID:** B-003  
-**Category:** Stats  
-**Description:** _____________  
-**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low  
+**Issue ID:** B-003
+**Category:** Stats
+**Description:** _____________
+**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low
 **Recommendation:** _____________
 
 ---
 
 #### Exploits
 
-**Issue ID:** B-004  
-**Category:** Exploit  
-**Description:** _____________  
-**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low  
+**Issue ID:** B-004
+**Category:** Exploit
+**Description:** _____________
+**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low
 **Recommendation:** _____________
 
 ---
 
 #### Gameplay Feel
 
-**Issue ID:** B-005  
-**Category:** Feel  
-**Description:** _____________  
-**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low  
+**Issue ID:** B-005
+**Category:** Feel
+**Description:** _____________
+**Severity:** 🔴 Critical / 🟡 High / 🟢 Medium / ⚪ Low
 **Recommendation:** _____________
 
 ---
