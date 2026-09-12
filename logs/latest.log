@@ -1,0 +1,7 @@
+[11:19:31] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.4+7; N/A (nix)) on Linux 6.18.40 (amd64)
+[11:19:31] [ServerMain/INFO]: [bootstrap] Loading Paper 26.2-123-main@5001879 (2026-09-09T17:32:22Z) for Minecraft 26.2
+[11:19:31] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[11:19:31] [CrashReport preload thread/WARN]: [oshi.software.os.linux.LinuxOperatingSystem] Did not find udev library in operating system. Some features may not work.
+[11:19:31] [ServerMain/INFO]: [PluginInitializerManager] Initialized 0 plugins
+[11:19:39] [DataConverter MCTypeRegistry init thread/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[11:19:40] [ServerMain/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.
