@@ -1,41 +1,70 @@
-# Dev DBs — pick one. Default plugin uses sqlite (no docker needed).
-# Uncomment service you test, then set database.type in config.yml accordingly.
-# Usage: docker compose up -d  →  docker compose down
+# PurrSkills Test Server - Docker Compose
+# Provides: PostgreSQL database + Paper 1.21 Minecraft server
 
 services:
-  # MySQL 8 — for database.type=mysql
-  # mysql:
-  #   image: mysql:8
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: change_me
-  #     MYSQL_DATABASE: minecraft
-  #     MYSQL_USER: mc
-  #     MYSQL_PASSWORD: change_me
-  #   ports:
-  #     - "3306:3306"
-  #   volumes:
-  #     - mysql_data:/var/lib/mysql
-  #   healthcheck:
-  #     test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-  #     interval: 5s
-  #     retries: 10
+  # PostgreSQL 17 — database for PurrCore/PurrSkills
+  postgres:
+    image: postgres:17
+    container_name: purrskills-postgres
+    environment:
+      POSTGRES_DB: minecraft
+      POSTGRES_USER: minecraft
+      POSTGRES_PASSWORD: minecraft_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U minecraft"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - minecraft-net
 
-  # PostgreSQL 17 — for database.type=postgresql
-  # postgres:
-  #   image: postgres:17
-  #   environment:
-  #     POSTGRES_DB: minecraft
-  #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: change_me
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - pg_data:/var/lib/postgresql/data
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "pg_isready -U postgres"]
-  #     interval: 5s
-  #     retries: 10
+  # Paper 1.21 Minecraft Server
+  minecraft:
+    image: itzg/minecraft-server:java21
+    container_name: purrskills-minecraft
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.21.1"
+      MEMORY: "2G"
+      SERVER_NAME: "PurrSkills Test Server"
+      MOTD: "PurrSkills Playtesting - DO NOT USE IN PRODUCTION"
+      DIFFICULTY: "peaceful"
+      MODE: "survival"
+      PVP: "true"
+      ONLINE_MODE: "false"  # Allow cracked clients for testing
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "minecraft"
+      RCON_PORT: 25575
+      # Server properties
+      MAX_PLAYERS: 10
+      VIEW_DISTANCE: 10
+      SIMULATION_DISTANCE: 8
+      SPAWN_PROTECTION: 0
+      ALLOW_NETHER: "true"
+      ALLOW_FLIGHT: "true"
+    ports:
+      - "25565:25565"  # Minecraft
+      - "25575:25575"  # RCON
+    volumes:
+      - ./server:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - minecraft-net
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
 
 volumes:
-  mysql_data:
   pg_data:
+    driver: local
+
+networks:
+  minecraft-net:
+    driver: bridge
