@@ -5,6 +5,7 @@ echo "🎮 Starting PurrSkills Test Server..."
 echo ""
 echo "Location: $(pwd)/server"
 echo "Port: 25565 (localhost only)"
+echo "Minecraft: 1.21.4 (Paper 26.2-123)"
 echo "Plugins: PurrCore + PurrSkills"
 echo ""
 
@@ -17,10 +18,11 @@ if [ ! -f "paper.jar" ]; then
     exit 1
 fi
 
-echo "✅ Paper JAR found"
-echo "✅ Plugins ready"
+echo "✅ Paper 26.2-123 JAR found (62 MB)"
+echo "✅ Plugins ready (PurrCore + PurrSkills)"
+echo "✅ Loading Java 21 via nix-shell..."
 echo ""
-echo "Starting server..."
+echo "Starting server (this may take 30-60 seconds)..."
 echo "----------------------------------------"
 echo ""
 
