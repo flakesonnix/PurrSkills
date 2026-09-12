@@ -135,10 +135,10 @@ SELECT * FROM player_skills;
 SELECT COUNT(DISTINCT player_uuid) FROM player_skills;
 
 # Top Mining players
-SELECT player_uuid, level, current_xp 
-FROM player_skills 
-WHERE skill = 'MINING' 
-ORDER BY level DESC, current_xp DESC 
+SELECT player_uuid, level, current_xp
+FROM player_skills
+WHERE skill = 'MINING'
+ORDER BY level DESC, current_xp DESC
 LIMIT 10;
 
 # Exit psql
@@ -149,8 +149,8 @@ LIMIT 10;
 
 ```sql
 -- Set player's Mining level to 100
-UPDATE player_skills 
-SET level = 100, current_xp = 0 
+UPDATE player_skills
+SET level = 100, current_xp = 0
 WHERE player_uuid = '<uuid>' AND skill = 'MINING';
 
 -- Reset all skills for a player
