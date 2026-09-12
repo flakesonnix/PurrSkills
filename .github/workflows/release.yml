@@ -21,6 +21,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout PurrCore
+        uses: actions/checkout@v4
+        with:
+          repository: flakesonnix/PurrCore
+          path: deps/PurrCore
+
       - name: Install Nix
         uses: cachix/install-nix-action@v27
         with:
@@ -39,6 +45,16 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Link sibling deps (../ layout)
+        run: |
+          for d in deps/*/; do
+            name=$(basename "$d")
+            ln -sfn "$GITHUB_WORKSPACE/deps/$name" "$(dirname "$GITHUB_WORKSPACE")/$name"
+          done
+
+      - name: Build PurrCore
+        run: gradle -p deps/PurrCore build -x test --no-daemon
 
       - name: Build (tests + jar)
         run: nix develop --accept-flake-config --command bash -c 'gradle test --no-daemon && gradle shadowJar --no-daemon'
