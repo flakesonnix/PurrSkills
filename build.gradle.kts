@@ -78,9 +78,9 @@ val shadowJar by tasks.registering(Jar::class) {
     from({
         configurations.runtimeClasspath.get()
             .filter { it.name.endsWith("jar") }
-            .filterNot { it.name.startsWith("kotlin-stdlib") }      // Exclude Kotlin stdlib
-            .filterNot { it.name.startsWith("kotlin-reflect") }     // Exclude Kotlin reflect
-            .filterNot { it.name.startsWith("kotlinx-") }           // Exclude Kotlinx libs
+            .filterNot { it.name.startsWith("kotlin-stdlib") } // Exclude Kotlin stdlib
+            .filterNot { it.name.startsWith("kotlin-reflect") } // Exclude Kotlin reflect
+            .filterNot { it.name.startsWith("kotlinx-") } // Exclude Kotlinx libs
             .map { zipTree(it) }
     })
     // merge service files (e.g., sqlite jdbc) — naive: exclude duplicates already
