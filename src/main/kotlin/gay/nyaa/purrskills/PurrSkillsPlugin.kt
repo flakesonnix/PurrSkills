@@ -138,16 +138,12 @@ class PurrSkillsPlugin : JavaPlugin() {
                 "skills",
                 "View your skill levels",
                 "/skills [player]",
-                listOf("skill")
+                listOf("skill"),
             ) {
-                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean {
-                    return skillsCommand.onCommand(sender, this, label, args)
-                }
+                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean = skillsCommand.onCommand(sender, this, label, args)
 
-                override fun tabComplete(sender: CommandSender, alias: String, args: Array<out String>): List<String> {
-                    return skillsCommand.onTabComplete(sender, this, alias, args) ?: emptyList()
-                }
-            }
+                override fun tabComplete(sender: CommandSender, alias: String, args: Array<out String>): List<String> = skillsCommand.onTabComplete(sender, this, alias, args) ?: emptyList()
+            },
         )
 
         // Stats command
@@ -158,16 +154,12 @@ class PurrSkillsPlugin : JavaPlugin() {
                 "stats",
                 "View your stats from skills",
                 "/stats [player]",
-                listOf("stat")
+                listOf("stat"),
             ) {
-                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean {
-                    return statsCommand.onCommand(sender, this, label, args)
-                }
+                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean = statsCommand.onCommand(sender, this, label, args)
 
-                override fun tabComplete(sender: CommandSender, alias: String, args: Array<out String>): List<String> {
-                    return statsCommand.onTabComplete(sender, this, alias, args) ?: emptyList()
-                }
-            }
+                override fun tabComplete(sender: CommandSender, alias: String, args: Array<out String>): List<String> = statsCommand.onTabComplete(sender, this, alias, args) ?: emptyList()
+            },
         )
 
         // Skills menu GUI command
@@ -179,12 +171,10 @@ class PurrSkillsPlugin : JavaPlugin() {
                 "skillsmenu",
                 "Open the visual skills menu",
                 "/skillsmenu",
-                listOf("skillmenu", "smenu")
+                listOf("skillmenu", "smenu"),
             ) {
-                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean {
-                    return skillsMenuCommand.onCommand(sender, this, label, args)
-                }
-            }
+                override fun execute(sender: CommandSender, label: String, args: Array<out String>): Boolean = skillsMenuCommand.onCommand(sender, this, label, args)
+            },
         )
 
         logger.info("Registered commands: /skills, /stats, /skillsmenu")
