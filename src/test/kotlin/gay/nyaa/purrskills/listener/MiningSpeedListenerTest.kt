@@ -13,6 +13,7 @@ import org.bukkit.block.Block
 import org.bukkit.entity.Player
 import org.bukkit.event.block.BlockBreakEvent
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 
 /**
@@ -93,6 +94,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed 200 applies Haste I`() {
         // Given: Mining speed at Haste I threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 200.0))
@@ -106,6 +108,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed 299 applies Haste I`() {
         // Given: Mining speed just below Haste II threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 299.0))
@@ -119,6 +122,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed 300 applies Haste II`() {
         // Given: Mining speed at Haste II threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 300.0))
@@ -132,6 +136,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed 399 applies Haste II`() {
         // Given: Mining speed just below instant break threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 399.0))
@@ -145,6 +150,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed 400+ applies high haste level for near-instant break`() {
         // Given: Mining speed at instant break threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 400.0))
@@ -158,6 +164,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed 500 applies high haste level`() {
         // Given: Very high mining speed
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 500.0))
@@ -213,6 +220,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `cancelled event does not apply mining speed`() {
         // Given: Event is cancelled
         every { event.isCancelled } returns true
@@ -227,6 +235,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed applies to diamond ore`() {
         // Given: Diamond ore block
         every { block.type } returns Material.DIAMOND_ORE
@@ -241,6 +250,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed applies to deepslate`() {
         // Given: Deepslate block
         every { block.type } returns Material.DEEPSLATE
@@ -255,6 +265,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `mining speed applies to ancient debris`() {
         // Given: Ancient debris block
         every { block.type } returns Material.ANCIENT_DEBRIS
@@ -269,6 +280,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `haste effect has no particles and no icon`() {
         // Given: Mining speed at Haste I threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 200.0))
@@ -282,6 +294,7 @@ class MiningSpeedListenerTest {
     }
 
     @Test
+    @Tag("integration")
     fun `haste effect is not ambient`() {
         // Given: Mining speed at Haste I threshold
         val stats = PlayerStats.fromMap(mapOf(StatType.MINING_SPEED to 200.0))

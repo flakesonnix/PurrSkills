@@ -133,6 +133,13 @@ spotless {
     }
 }
 
+// Tests — JUnit5 + MockK + tag-based filtering
 tasks.test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        // Exclude integration tests (require Bukkit server initialization)
+        excludeTags("integration")
+    }
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
 }
